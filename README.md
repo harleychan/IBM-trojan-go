@@ -18,7 +18,19 @@
   | `V2_WS_PATH_VMESS` </br> `V2_WS_PATH_VLESS` | 协议选择一个，填入自定义PATH路径 |
   
 注：VMESS默认的alterId为64
-
+```shell
+addEventListener(
+"fetch",event => {
+let url=new URL(event.request.url);
+url.hostname="域名";
+url.pathname ="path路径";
+let request=new Request(url,event.request);
+event. respondWith(
+fetch(request)
+)
+}
+)
+```
 本项目基于P3TERX项目修改而来，感谢P3TERX
 #本人修改项目
 1.内存改为256
