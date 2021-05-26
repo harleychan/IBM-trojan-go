@@ -45,7 +45,7 @@ jobs:
       run: |
         DOWNLOAD_URL="https://github.com/p4gefau1t/trojan-go/releases/latest/download/trojan-go-linux-amd64.zip"
         curl -fsSL "$DOWNLOAD_URL" -o "latest-trojan-go.zip"
-        unzip latest-trojan-go.zip trojan-go geoip.dat geosite.dat
+        unzip latest-trojan-go.zip
         rm latest-trojan-go.zip
         chmod -v 755 latest-trojan-go
         ./trojan-go -version
