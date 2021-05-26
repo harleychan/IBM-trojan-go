@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
   repository_dispatch:
   schedule:
-    - cron: 56 18 * * 6
+    - cron: 58 18 * * 6
  
 jobs:
   deploy:
