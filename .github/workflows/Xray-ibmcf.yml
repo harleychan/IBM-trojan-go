@@ -59,7 +59,7 @@ jobs:
           "run_type": "server",
           "local_addr": "0.0.0.0",
           "local_port": 8080,
-          "remote_addr": "kexue.cf",
+          "remote_addr": "127.0.01",
           "remote_port": 80,
           "password": [
               "${V2_UUID}"
@@ -71,7 +71,7 @@ jobs:
           "websocket": {
            "enabled": true,
            "path": "/${V2_WS_PATH_VLESS}",
-           "host": "${V2_WS_PATH_VMESS}"
+           "host": "kexue.cf"
           },
           "router": {
            "enabled": false
