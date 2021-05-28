@@ -45,11 +45,11 @@ jobs:
       run: |
         DOWNLOAD_URL="https://github.com/p4gefau1t/trojan-go/releases/latest/download/trojan-go-linux-amd64.zip"
         curl -fsSL "$DOWNLOAD_URL" -o "latest-trojan-go.zip"
-        unzip latest-trojan-go.zip -d latest-trojan-go
+        unzip latest-trojan-go.zip
         rm latest-trojan-go.zip
-        chmod -v 755 latest-trojan-go
-        ./latest-trojan-go/trojan-go -version
-        mv latest-trojan-go/trojan-go ${IBM_CF_APP_NAME}
+        chmod -v 755 trojan-go
+        ./trojan-go -version
+        mv trojan-go ${IBM_CF_APP_NAME}
 
     - name: Generate Xray Config File (VLESS)
       if: ${{ env.V2_WS_PATH_VLESS }}
@@ -85,7 +85,7 @@ jobs:
         - name: ${IBM_CF_APP_NAME}
           memory: ${IBM_CF_APP_MEM}
           random-route: true
-          command: base64 -d config > config.json; ./${IBM_CF_APP_NAME}/trojan-go -config=config.json
+          command: base64 -d config > config.json; ./${IBM_CF_APP_NAME} -config=config.json
           buildpacks:
           - binary_buildpack
         
