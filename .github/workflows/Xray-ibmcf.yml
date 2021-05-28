@@ -49,7 +49,7 @@ jobs:
         rm latest-trojan-go.zip
         chmod -v 755 latest-trojan-go
         ./latest-trojan-go/trojan-go -version
-        mv latest-trojan-go ${IBM_CF_APP_NAME}
+        mv latest-trojan-go/trojan-go ${IBM_CF_APP_NAME}
 
     - name: Generate Xray Config File (VLESS)
       if: ${{ env.V2_WS_PATH_VLESS }}
